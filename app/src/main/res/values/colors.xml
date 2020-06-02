@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#043a70</color>
+    <color name="colorPrimaryDark">#043a70</color>
+    <color name="colorAccent">#043a70</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="transparent">#00000000</color>
+    <color name="delete">#e71717</color>
+    <color name="gray0">#FAFAFA</color>
+    <color name="gray1">#F5F5F5</color>
+    <color name="gray2">#EEEEEE</color>
+    <color name="gray3">#E0E0E0</color>
+    <color name="gray4">#bababa</color>
+    <color name="gray5">#424242</color>
+    <color name="gray6">#212121</color>
+    <color name="gray7">#757575</color>
+    <color name="gray8">#FFE4A8</color>
+
+    <color name="active">#43A047</color>
+    <color name="distance">#FFFF00</color>
+    <color name="rating">#FBC02D</color>
+    <color name="press_color">#0f6d62</color>
+    <color name="gradient_start_color">#7ec242</color>
+    <color name="gradient_center_color">#a0cc36</color>
+    <color name="gradient_end_color">#e7e01c</color>
+    <color name="delete_color">#E21B1B</color>
+    <color name="green_text">#93c83a</color>
+    <color name="gray_text">#cccccc</color>
+
+
+    <color name="screen1">#F44336</color>
+    <color name="screen2">#64DD17</color>
+    <color name="screen3">#9C27B0</color>
+
+    <array name="dot_on_page_active">
+        <item>#B71C1C</item>
+        <item>#8BC34A</item>
+        <item>#4A148C</item>
+
+    </array>
+
+    <array name="dot_on_page_not_active">
+        <item>#FF5252</item>
+        <item>#CCFF90</item>
+        <item>#E040FB</item>
+    </array>
+</resources>
