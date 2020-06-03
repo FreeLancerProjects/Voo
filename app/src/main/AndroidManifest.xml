@@ -71,9 +71,9 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
-        android:name="com.endpoint.voo.activities_fragments.activity_sign_in.activity.SignInActivity"
-        android:configChanges="orientation|screenSize|keyboardHidden"
-        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+            android:name="com.endpoint.voo.activities_fragments.activity_sign_in.activity.SignInActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name="com.endpoint.voo.activities_fragments.activity_fragment_category.Add_Coupon_Activity"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -101,13 +101,13 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-        android:name="com.endpoint.voo.activities_fragments.activity_home.client_home.activity.ClientHomeActivity"
-        android:configChanges="orientation|screenSize|keyboardHidden"
-        android:excludeFromRecents="true"
-        android:launchMode="singleTask"
-        android:taskAffinity="" />
+            android:name="com.endpoint.voo.activities_fragments.activity_home.client_home.activity.ClientHomeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="" />
         <activity
-            android:name="com.endpoint.voo.activities_fragments.telr_activity.TelrActivity"
+            android:name=".activities_fragments.telr_activity.TelrActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1081763298452",
+    "firebase_url": "https://voo-arive.firebaseio.com",
+    "project_id": "voo-arive",
+    "storage_bucket": "voo-arive.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081763298452:android:a664c5347d9dbd74c18881",
+        "android_client_info": {
+          "package_name": "com.endpoint.voo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081763298452-064slgdeuk44qnn693vp29g038jvephs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARNAGnDzALLf5RopW4ov-gsgnsJ3_VZmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081763298452-064slgdeuk44qnn693vp29g038jvephs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -380,7 +380,10 @@
                 android:visibility="gone"
                 android:textStyle="bold"
                 />
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray5"/>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cons_about"
                 android:layout_width="match_parent"

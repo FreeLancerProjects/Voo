@@ -232,13 +232,13 @@ public class Fragment_Code_Verification extends Fragment {
         Log.e("ccc", code);
         if (id != null) {
 
-try {
-    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(id, code);
-    siginwithcredental(credential);
+            try {
+                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(id, code);
+                siginwithcredental(credential);
 
-}catch (Exception e){
+            }catch (Exception e){
 
-}
+            }
         }
     }
 
@@ -253,7 +253,7 @@ try {
                     phone_code = phone_code.replace("+","00");
                     mAuth.signOut();
                     //activity.NavigateToClientHomeActivity();
-                   // ValidateCode("1234");
+                    // ValidateCode("1234");
                     activity.signIn(phone_number, country_code, phone_code);
 
                 }
@@ -346,6 +346,5 @@ try {
         }
     }
 }
-
 
 

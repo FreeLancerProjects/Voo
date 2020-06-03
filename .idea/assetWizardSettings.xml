@@ -68,7 +68,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="scalingPercent" value="46" />
+                                                <entry key="scalingPercent" value="56" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -80,8 +80,7 @@
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
                                       <entry key="backgroundColor" value="ffffff" />
-                                      <entry key="foregroundImage" value="C:\android\AndroidProjects\FastOne\app\src\main\res\drawable\logo_only.png" />
-                                      <entry key="outputName" value="ic_notification" />
+                                      <entry key="foregroundImage" value="C:\android\AndroidProjects\Voo\app\src\main\res\drawable\logo.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
