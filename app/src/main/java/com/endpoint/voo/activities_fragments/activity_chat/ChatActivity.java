@@ -659,6 +659,7 @@ pay();
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void ListenToNewMessage(MessageModel messageModel) {
+        getOrder();
         if(messageModel.getBill_step()!=null){
             if(messageModel.getBill_step().equals("bill_paid")){
                 ll_bill.setVisibility(View.GONE);
@@ -677,7 +678,7 @@ pay();
             ll_bill.setVisibility(View.GONE);
 
         }
-        else if(userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT)&&!messageModel.getBill_step().equals("bill_attach"))
+        else if(userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT)&&messageModel.getBill_step().equals("bill_attach"))
         {
             tv_title.setText(getResources().getString(R.string.pay));
 
@@ -762,7 +763,7 @@ pay();
             ll_bill.setVisibility(View.GONE);
 
         }
-        else if(userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT)&&!chatUserModel.getBill_step().equals("bill_attach"))
+        else if(userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT)&&chatUserModel.getBill_step().equals("bill_attach"))
         {
             ll_bill.setVisibility(View.VISIBLE);
             tv_title.setText(getResources().getString(R.string.pay));
