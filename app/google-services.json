@@ -1,35 +1,59 @@
 {
   "project_info": {
-    "project_number": "1081763298452",
-    "firebase_url": "https://voo-arive.firebaseio.com",
-    "project_id": "voo-arive",
-    "storage_bucket": "voo-arive.appspot.com"
+    "project_number": "143143820786",
+    "firebase_url": "https://voo-app-dc108.firebaseio.com",
+    "project_id": "voo-app-dc108",
+    "storage_bucket": "voo-app-dc108.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1081763298452:android:a664c5347d9dbd74c18881",
+        "mobilesdk_app_id": "1:143143820786:android:910d721625da538fe11f6b",
         "android_client_info": {
           "package_name": "com.endpoint.voo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1081763298452-064slgdeuk44qnn693vp29g038jvephs.apps.googleusercontent.com",
+          "client_id": "143143820786-rprqkcj4o83e1bteidh7ostqgjded14l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.endpoint.voo",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "143143820786-ikbpv6jshs116103pc3b6sft17jhaere.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.endpoint.voo",
+            "certificate_hash": "e6a73e70c3fc31d4b07d77141e133d0dd6e6939e"
+          }
+        },
+        {
+          "client_id": "143143820786-knnj3t3s88csc8foigsknd1q7dqpcn07.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyARNAGnDzALLf5RopW4ov-gsgnsJ3_VZmY"
+          "current_key": "AIzaSyCR71O_lc8Q-3SKKUB4Yw727VO08MDnvL4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1081763298452-064slgdeuk44qnn693vp29g038jvephs.apps.googleusercontent.com",
+              "client_id": "143143820786-knnj3t3s88csc8foigsknd1q7dqpcn07.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "143143820786-huavsbn1bl7asjafc3eie1ee6j6c8d82.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.endpoint.Voo",
+                "app_store_id": "4546564732"
+              }
             }
           ]
         }
