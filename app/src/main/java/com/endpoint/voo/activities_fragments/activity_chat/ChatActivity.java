@@ -677,7 +677,7 @@ pay();
             ll_bill.setVisibility(View.GONE);
 
         }
-        else if(userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT)&&!messageModel.getBill_step().equals("not_attach"))
+        else if(userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT)&&!messageModel.getBill_step().equals("bill_attach"))
         {
             tv_title.setText(getResources().getString(R.string.pay));
 

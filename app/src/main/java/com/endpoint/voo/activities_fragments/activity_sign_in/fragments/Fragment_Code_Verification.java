@@ -258,7 +258,7 @@ public class Fragment_Code_Verification extends Fragment {
 
                 }
                 else {
-                    Log.e("llllll",";llllll");
+                    Log.e("llllll",task.getException().toString());
 
                 }
 
