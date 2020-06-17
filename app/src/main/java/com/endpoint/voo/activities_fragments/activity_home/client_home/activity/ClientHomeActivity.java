@@ -201,8 +201,11 @@ public class ClientHomeActivity extends AppCompatActivity implements GoogleApiCl
     }
 
     private void getDataFromIntent() {
+
         Intent intent = getIntent();
         if (intent != null) {
+            getUserDataById(userModel.getData().getUser_id());
+
             try {
                 if (intent.hasExtra("status")) {
                     String status = intent.getStringExtra("status");
@@ -507,6 +510,7 @@ fragment_client_orders.getOrders();                             }
         }}
 
         canRead = true;
+        getUserDataById(userModel.getData().getUser_id());
         RefreshFragment_Notification();
         getNotificationCount();
         RefreshFragment_Order();
