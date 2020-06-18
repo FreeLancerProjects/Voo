@@ -238,7 +238,7 @@ public interface Service {
 
     @GET("/api/clientOrders")
     Call<OrderDataModel> getClientOrders(@Query("user_id") String user_id, @Query("order_type") String order_type, @Query("page") int page);
-    @GET("/api/clientOrders")
+    @GET("/api/getOrder")
     Call<OrderModel> getClientOrders(@Query("order_id")String order_id);
 
 

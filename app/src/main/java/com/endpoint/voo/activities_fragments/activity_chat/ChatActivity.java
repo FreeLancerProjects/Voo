@@ -115,7 +115,7 @@ public class ChatActivity extends AppCompatActivity {
     private MediaPlayer mp;
     private final String audio_perm = Manifest.permission.RECORD_AUDIO;
     private final int write_req = 100;
-private TextView tv_title;
+    private TextView tv_title;
     private boolean isPermissionGranted = false;
     private MediaPlayer mediaPlayer;
     private final String read_permission = Manifest.permission.READ_EXTERNAL_STORAGE;
@@ -128,7 +128,7 @@ private TextView tv_title;
     private String path;
     private SeekBar seekBar;
     private CardView cardView;
-private String bill_amount;
+    private String bill_amount;
     private int network_per;
     private double network_per_totla;
 
@@ -175,7 +175,7 @@ private String bill_amount;
 
         userSingleTone = UserSingleTone.getInstance();
         userModel = userSingleTone.getUserModel();
-tv_title=findViewById(R.id.tvTitle);
+        tv_title = findViewById(R.id.tvTitle);
         image_back = findViewById(R.id.image_back);
         imageMic = findViewById(R.id.imageMic);
         imagePlay = findViewById(R.id.imagePlay);
@@ -289,11 +289,11 @@ tv_title=findViewById(R.id.tvTitle);
         ll_bill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(userModel.getData().getUser_type().equals(Tags.TYPE_DELEGATE)){
-                which_image_upload_selected = 1;
-                CreateImageAlertDialog();}
-                else {
-pay();
+                if (userModel.getData().getUser_type().equals(Tags.TYPE_DELEGATE)) {
+                    which_image_upload_selected = 1;
+                    CreateImageAlertDialog();
+                } else {
+                    pay();
                 }
             }
         });
@@ -685,7 +685,7 @@ pay();
 //            ll_bill.setVisibility(View.VISIBLE);
 //
 //        }}
-        if(messageModel.getTotal_cost()!=null){
+        if (messageModel.getTotal_cost() != null) {
             chatUserModel.setTotla_cost(messageModel.getTotal_cost());
         }
         if (adapter == null) {
@@ -745,26 +745,18 @@ pay();
     }
 
     private void UpdateUI(ChatUserModel chatUserModel) {
-        if(chatUserModel.getBill_step().equals("bill_paid")){
+        if (chatUserModel.getBill_step().equals("bill_paid")) {
             ll_bill.setVisibility(View.GONE);
 
-        }
-
-        else if (userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT)&&chatUserModel.getBill_step().equals("not_attach")) {
+        } else if (userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT) && chatUserModel.getBill_step().equals("not_attach")) {
             ll_bill.setVisibility(View.GONE);
-        }
-        else if(userModel.getData().getUser_type().equals(Tags.TYPE_DELEGATE)&&chatUserModel.getBill_step().equals("not_attach"))
-        {
+        } else if (userModel.getData().getUser_type().equals(Tags.TYPE_DELEGATE) && chatUserModel.getBill_step().equals("not_attach")) {
             ll_bill.setVisibility(View.VISIBLE);
 
-        }
-        else if(userModel.getData().getUser_type().equals(Tags.TYPE_DELEGATE)&&!chatUserModel.getBill_step().equals("not_attach"))
-        {
+        } else if (userModel.getData().getUser_type().equals(Tags.TYPE_DELEGATE) && !chatUserModel.getBill_step().equals("not_attach")) {
             ll_bill.setVisibility(View.GONE);
 
-        }
-        else if(userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT)&&chatUserModel.getBill_step().equals("bill_attach"))
-        {
+        } else if (userModel.getData().getUser_type().equals(Tags.TYPE_CLIENT) && chatUserModel.getBill_step().equals("bill_attach")) {
             ll_bill.setVisibility(View.VISIBLE);
             tv_title.setText(getResources().getString(R.string.pay));
 
@@ -802,7 +794,7 @@ pay();
                     @Override
                     public void onResponse(Call<MessageModel> call, Response<MessageModel> response) {
 
-                        Log.e("llllsss", response.code() + "" );
+                        Log.e("llllsss", response.code() + "");
                         progBar.setVisibility(View.GONE);
                         if (response.isSuccessful()) {
                             if (adapter == null) {
@@ -849,6 +841,7 @@ pay();
                 });
 
     }
+
     private void sendلاbillMessageWithImage(String msg) {
         RequestBody room_part = Common.getRequestBodyText(chatUserModel.getRoom_id());
         RequestBody from_user_id_part = Common.getRequestBodyText(userModel.getData().getUser_id());
@@ -857,14 +850,14 @@ pay();
         RequestBody user_msg_part = Common.getRequestBodyText(msg);
         RequestBody user_msg_type_part = Common.getRequestBodyText(Tags.MESSAGE_IMAGE_TEXT);
         RequestBody bill_type_part = Common.getRequestBodyText(bill_amount);
-        RequestBody network_per_part = Common.getRequestBodyText(network_per_totla+"");
+        RequestBody network_per_part = Common.getRequestBodyText(network_per_totla + "");
 
         RequestBody order_type_part = Common.getRequestBodyText(chatUserModel.getOrder_id());
 
         MultipartBody.Part image_part = Common.getMultiPart(this, imgUri, "file");
 
         Api.getService(Tags.base_url)
-                .sendbillWithImage(room_part, from_user_id_part, to_user_id_part, user_msg_part, user_msg_type_part,bill_type_part,order_type_part,network_per_part,image_part)
+                .sendbillWithImage(room_part, from_user_id_part, to_user_id_part, user_msg_part, user_msg_type_part, bill_type_part, order_type_part, network_per_part, image_part)
                 .enqueue(new Callback<MessageModel>() {
                     @Override
                     public void onResponse(Call<MessageModel> call, Response<MessageModel> response) {
@@ -873,7 +866,7 @@ pay();
                         progBar.setVisibility(View.GONE);
                         if (response.isSuccessful()) {
                             ll_bill.setVisibility(View.GONE);
-                           // chatUserModel.setBill_step("bill_attach");
+                            // chatUserModel.setBill_step("bill_attach");
                             if (adapter == null) {
                                 messageModelList.add(response.body());
                                 adapter = new ChatAdapter(messageModelList, userModel.getData().getUser_id(), chatUserModel.getImage(), ChatActivity.this);
@@ -898,7 +891,7 @@ pay();
                                     }
                                 }, 100);
                             }
-getOrder();
+                            getOrder();
                         } else {
 
                             try {
@@ -1209,8 +1202,7 @@ getOrder();
 
             }
 
-        }
-        else if(requestCode==100){
+        } else if (requestCode == 100) {
             ll_bill.setVisibility(View.GONE);
             BillDataModel.setBill_step("bill_paid");
             BillDataModel.setTotla_Cost(chatUserModel.getTotla_cost());
@@ -1241,11 +1233,11 @@ getOrder();
                     Common.CloseKeyBoard(ChatActivity.this, edt_order_cost);
 
                     double total = Double.parseDouble(cost) + Double.parseDouble(chatUserModel.getOffer_cost());
-                     network_per_totla=(total*network_per)/100;
-                     network_per_totla=0;
-                  //   total+=network_per_totla;
-                    String msg = "تكلفة المشتريات: " + cost + " " + currency.getSymbol() + "\n" + "تكلفة التوصيل شامل ضريبة القيمه المضافه: " + chatUserModel.getOffer_cost()  + currency.getSymbol() +"\n" + "المجموع الكلي : " + total + " " + currency.getSymbol() ;
-                    bill_amount=total+"";
+                    network_per_totla = (total * network_per) / 100;
+                    network_per_totla = 0;
+                    //   total+=network_per_totla;
+                    String msg = "تكلفة المشتريات: " + cost + " " + currency.getSymbol() + "\n" + "تكلفة التوصيل شامل ضريبة القيمه المضافه: " + chatUserModel.getOffer_cost() + currency.getSymbol() + "\n" + "المجموع الكلي : " + total + " " + currency.getSymbol();
+                    bill_amount = total + "";
                     sendلاbillMessageWithImage(msg);
 
                 }
@@ -1321,53 +1313,48 @@ getOrder();
             return null;
         }
     }
+
     public void pay() {
 
-        ProgressDialog dialog = Common.createProgressDialog(this,getString(R.string.wait));
+        ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
         dialog.setCancelable(false);
         dialog.show();
         try {
 
             Api.getService(Tags.base_url)
-                    .getbillpay(userModel.getData().getUser_id(),chatUserModel.getOrder_id(),chatUserModel.getTotla_cost())
+                    .getbillpay(userModel.getData().getUser_id(), chatUserModel.getOrder_id(), chatUserModel.getTotla_cost())
                     .enqueue(new Callback<PayPalLinkModel>() {
                         @Override
                         public void onResponse(Call<PayPalLinkModel> call, Response<PayPalLinkModel> response) {
                             dialog.dismiss();
-                            if (response.isSuccessful()&&response.body()!=null)
-                            {
-                                if (response.body()!=null)
-                                {
+                            if (response.isSuccessful() && response.body() != null) {
+                                if (response.body() != null) {
                                     // Log.e("body",response.body().getData()+"______");
                                     Intent intent = new Intent(ChatActivity.this, TelrActivity.class);
-                                    intent.putExtra("data",response.body());
-                                    startActivityForResult(intent,100);
+                                    intent.putExtra("data", response.body());
+                                    startActivityForResult(intent, 100);
 
 
-
-                                }else
-                                {
-                                    Toast.makeText(ChatActivity.this,R.string.failed, Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(ChatActivity.this, R.string.failed, Toast.LENGTH_SHORT).show();
                                 }
 
 
-                            }else
-                            {
+                            } else {
                                 try {
-                                    Log.e("dlldldl",response.errorBody().string());
+                                    Log.e("dlldldl", response.errorBody().string());
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
                                 if (response.code() == 500) {
                                     Toast.makeText(ChatActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
 
-                                }else
-                                {
+                                } else {
                                     Toast.makeText(ChatActivity.this, getString(R.string.failed), Toast.LENGTH_SHORT).show();
 
                                     try {
 
-                                        Log.e("error",response.code()+"_"+response.errorBody().string());
+                                        Log.e("error", response.code() + "_" + response.errorBody().string());
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -1379,27 +1366,26 @@ getOrder();
                         public void onFailure(Call<PayPalLinkModel> call, Throwable t) {
                             try {
                                 dialog.dismiss();
-                                if (t.getMessage()!=null)
-                                {
-                                    Log.e("error",t.getMessage());
-                                    if (t.getMessage().toLowerCase().contains("failed to connect")||t.getMessage().toLowerCase().contains("unable to resolve host"))
-                                    {
-                                        Toast.makeText(ChatActivity.this,R.string.something, Toast.LENGTH_SHORT).show();
-                                    }else
-                                    {
-                                        Toast.makeText(ChatActivity.this,t.getMessage(), Toast.LENGTH_SHORT).show();
+                                if (t.getMessage() != null) {
+                                    Log.e("error", t.getMessage());
+                                    if (t.getMessage().toLowerCase().contains("failed to connect") || t.getMessage().toLowerCase().contains("unable to resolve host")) {
+                                        Toast.makeText(ChatActivity.this, R.string.something, Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(ChatActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 }
 
-                            }catch (Exception e){}
+                            } catch (Exception e) {
+                            }
                         }
                     });
-        }catch (Exception e){
+        } catch (Exception e) {
             dialog.dismiss();
 
         }
 
     }
+
     private void getSocialMedia() {
 
 //        final ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
@@ -1410,13 +1396,13 @@ getOrder();
                 .enqueue(new Callback<SocialMediaModel>() {
                     @Override
                     public void onResponse(Call<SocialMediaModel> call, Response<SocialMediaModel> response) {
-                     //   dialog.dismiss();
+                        //   dialog.dismiss();
                         if (response.isSuccessful() && response.body() != null) {
-                           network_per=response.body().getNetwork_per();
+                            network_per = response.body().getNetwork_per();
 
 
                         } else {
-                     //       dialog.dismiss();
+                            //       dialog.dismiss();
                             try {
                                 Log.e("error_code", response.code() + "" + response.errorBody().string());
                             } catch (IOException e) {
@@ -1428,7 +1414,7 @@ getOrder();
                     @Override
                     public void onFailure(Call<SocialMediaModel> call, Throwable t) {
                         try {
-                       //     dialog.dismiss();
+                            //     dialog.dismiss();
                             Log.e("Error", t.getMessage());
                         } catch (Exception e) {
                         }
@@ -1436,6 +1422,7 @@ getOrder();
                 });
 
     }
+
     private void getOrder() {
 
         final ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
@@ -1448,7 +1435,7 @@ getOrder();
                     public void onResponse(Call<OrderModel> call, Response<OrderModel> response) {
                         dialog.dismiss();
                         if (response.isSuccessful() && response.body() != null) {
-update(response.body());
+                            update(response.body());
 
 
                         } else {
@@ -1474,7 +1461,7 @@ update(response.body());
     }
 
     private void update(OrderModel order) {
-        chatUserModel = new ChatUserModel(order.getDriver_user_full_name(),order.getDriver_user_image(),order.getDriver_id(),order.getRoom_id_fk(),order.getDriver_user_phone_code(),order.getDriver_user_phone(),order.getOrder_id(),order.getDriver_offer(),order.getBill_step(),order.getBill_amount());
+        chatUserModel = new ChatUserModel(order.getDriver_user_full_name(), order.getDriver_user_image(), order.getDriver_id(), order.getRoom_id_fk(), order.getDriver_user_phone_code(), order.getDriver_user_phone(), order.getOrder_id(), order.getDriver_offer(), order.getBill_step(), order.getBill_amount());
 
         UpdateUI(chatUserModel);
 
